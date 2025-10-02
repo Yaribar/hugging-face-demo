@@ -17,4 +17,4 @@ jobs:
         run: git remote add space https://Yarib:${{ secrets.HF }}@huggingface.co/spaces/Yarib/demo2
 
       - name: Push to Hugging Face
-        run: git push --force space main
+        run: git push --force space master

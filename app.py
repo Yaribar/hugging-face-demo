@@ -12,3 +12,4 @@ with gr.Blocks() as demo:
     gr.Interface(fn=predict, inputs=textbox, outputs="text")
 
 demo.launch()
+# Comment

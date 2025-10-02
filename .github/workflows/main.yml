@@ -1,0 +1,20 @@
+name: Sync to Hugging Face hub
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs: 
+  sync-to-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Add Hugging Face remote
+        run: git remote add space https://Yarib:${{ secrets.HF }}@huggingface.co/spaces/Yarib/demo2
+
+      - name: Push to Hugging Face
+        run: git push --force space main
